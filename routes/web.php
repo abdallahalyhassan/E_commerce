@@ -1,0 +1,88 @@
+<?php
+
+
+$page = isset($_GET['page']) ? $_GET['page'] : "home";
+// var_dump($page);
+if ($page != 'home') {
+    require_once "../inc/header.php";
+}
+
+switch ($page) {
+    case "home":
+        require_once "../views/index.php";
+        break;
+    case "product":
+        require_once "../views/product-details.php";
+        break;
+    case "404":
+        require_once "../views/404.php";
+        break;
+    case "about":
+        require_once "../views/about.php";
+        break;
+    case "blog-details":
+        require_once "../views/blog-details.php";
+        break;
+    case "blog":
+        require_once "../views/blog.php";
+        break;
+    case "cart":
+        require_once "../views/cart.php";
+        break;
+    case "checkout":
+        require_once "../views/checkout.php";
+        break;
+    case "contact":
+        require_once "../views/contact.php";
+        break;
+    case "faq":
+        require_once "../views/faq.php";
+        break;
+    case "forget-password":
+        require_once "../views/forget-password.php";
+        break;
+    case "index-2":
+        require_once "../views/index-2.php";
+        break;
+    case "login":
+        require_once "../views/login.php";
+        break;
+    case "my-account":
+        require_once "../views/my-account.php";
+        break;
+    case "privacy-policy":
+        require_once "../views/privacy-policy.php";
+        break;
+    case "register":
+        require_once "../views/register.php";
+        break;
+    case "services":
+        require_once "../views/services.php";
+        break;
+    case "tracking":
+        require_once "../views/tracking.php";
+        break;
+    case "wishlist":
+        require_once "../views/tracking.php";
+        break;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if ($page != 'home') {
+    require_once "../inc/footer.php";
+}
