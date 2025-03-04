@@ -611,5 +611,6 @@
         </div>
     </section>
     <!--shipping area end-->
+    <?php 
+    // every things included already in index page with all routes, we dont need to include footer here
 	
-	<?php require_once("inc/footer.php");?>
