@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-\session_start();  
+// session_start();  
 
 use PDO;
 use PDOException;
