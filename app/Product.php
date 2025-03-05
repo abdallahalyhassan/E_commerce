@@ -1,17 +1,19 @@
 <?php
 namespace App;
+use Database\DatabaseManager;
+
 use PDO;
 class Product {
-    private $pdo;
+    private $db;
     
-    public function __construct($pdo) {
-        $this->pdo = $pdo;
+    public function __construct() {
+        $this->db = DatabaseManager::getConnection();
     }
 
     //add new product 
     public function addProduct($name, $description, $price, $stock, $category_id, $image) {
         $query = "INSERT INTO products (name, description, price, stock, category_id, image) VALUES (:name, :description, :price, :stock, :category_id, :image)";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         return $stmt->execute([
             ":name" => $name,
             ":description" => $description,
@@ -30,7 +32,7 @@ class Product {
         }
         $query .= " WHERE id = :id";
 
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         $params = [
             ":id" => $id,
             ":name" => $name,
@@ -48,7 +50,7 @@ class Product {
     // delete product  
     public function deleteProduct($id) {
         $query = "DELETE FROM products WHERE id = :id";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         return $stmt->execute([":id" => $id]);
     }
 
@@ -58,7 +60,7 @@ class Product {
         if ($category_id) {
             $query .= " WHERE category_id = :category_id";
         }
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         if ($category_id) {
             $stmt->execute([":category_id" => $category_id]);
         } else {
@@ -70,7 +72,7 @@ class Product {
     // return one product with its id
     public function getProductById($id) {
         $query = "SELECT * FROM products WHERE id = :id";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         $stmt->execute([":id" => $id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
@@ -78,7 +80,7 @@ class Product {
     // check if product in stock or not  
     public function isInStock($id) {
         $query = "SELECT stock FROM products WHERE id = :id";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         $stmt->execute([":id" => $id]);
         $stock = $stmt->fetchColumn();
         return $stock > 0;
@@ -87,14 +89,14 @@ class Product {
     // update product stock after any transaction
     public function updateStock($id, $quantity) {
         $query = "UPDATE products SET stock = stock - :quantity WHERE id = :id AND stock >= :quantity";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         return $stmt->execute([":id" => $id, ":quantity" => $quantity]);
     }
 
     // search about any product with key word related to this product 
     public function searchProducts($keyword) {
         $query = "SELECT * FROM products WHERE name LIKE :keyword OR description LIKE :keyword";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         $stmt->execute([":keyword" => "%$keyword%"]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -102,7 +104,7 @@ class Product {
     // if we need to apply discount about any product 
     public function applyDiscount($id, $discountPercentage) {
         $query = "UPDATE products SET price = price - (price * :discount / 100) WHERE id = :id";
-        $stmt = $this->pdo->prepare($query);
+        $stmt = $this->db->prepare($query);
         return $stmt->execute([":id" => $id, ":discount" => $discountPercentage]);
     }
 }

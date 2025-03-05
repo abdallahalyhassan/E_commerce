@@ -10,7 +10,7 @@ class CreatePaymentsTable{
             order_id INT NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
             FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-            status BOOLEAN NOT NULL DEFAULT FALSE  ,
+            status varchar(10)  DEFAULT 'false'  ,
             payment_method varchar(255) NOT NULL   ,
             created_at  TIMESTAMP  DEFAULT CURRENT_TIMESTAMP
         

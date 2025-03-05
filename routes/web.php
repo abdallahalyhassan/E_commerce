@@ -2,10 +2,8 @@
 
 
 $page = isset($_GET['page']) ? $_GET['page'] : "home";
-// var_dump($page);
-if ($page != 'home') {
-    require_once "../inc/header.php";
-}
+
+require_once "../inc/header.php";
 
 switch ($page) {
     case "home":
@@ -83,6 +81,5 @@ switch ($page) {
 
 
 
-if ($page != 'home') {
+
     require_once "../inc/footer.php";
-}
