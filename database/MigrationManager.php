@@ -20,8 +20,6 @@ class MigrationManager{
         return $migration;
     }
 
-
-   
     public static function runMigrations()
     {
        
