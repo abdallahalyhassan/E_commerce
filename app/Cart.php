@@ -1,4 +1,6 @@
 <?php
+namespace App;
+use PDO;
 use Database\DatabaseManager;
 
 class Cart {

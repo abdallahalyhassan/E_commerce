@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index-2.html">home</a></li>
+                            <li><a href="../routes/web.php?page=home">home</a></li>
                             <li>Checkout</li>
                         </ul>
                     </div>
@@ -26,7 +26,7 @@
                         <h3> 
                             <i class="fa fa-file-o" aria-hidden="true"></i>
                             Returning customer?
-                            <a class="Returning" href="#" data-toggle="collapse" data-target="#checkout_login" aria-expanded="true" aria-controls="checkout_login">Click here to login</a>     
+                            <a class="Returning" href="../routes/web.php?page=login" data-toggle="collapse" data-target="#checkout_login" aria-expanded="true" aria-controls="checkout_login">Click here to login</a>     
 
                         </h3>
                         <div id="checkout_login" class="collapse" data-parent="#accordionExample">

@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index-2.html">home</a></li>
+                            <li><a href="../routes/web.php?page=">home</a></li>
                             <li>Register</li>
                         </ul>
                     </div>

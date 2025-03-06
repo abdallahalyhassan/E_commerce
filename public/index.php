@@ -10,6 +10,7 @@ use App\Category;
 use App\Payment;
 use App\Blogs;
 use App\Comment;
+use App\Slider;
 
 
 require_once "../vendor/autoload.php";
@@ -21,13 +22,13 @@ MigrationManager::runMigrations();
 
 
 
-$u=new User();
+// $u=new User();
 // $u->add_User("abdallah","aly","abdallah@gmail.com","123123123",'admin');
-$p=new Order();
+// $p=new Order();
 // $p->createOrder('1','500');
 // var_dump($u->getall());
 
-$pay=new Payment();
+// $pay=new Payment();
 // $pay->DefultPayment(1,1);
 // $pay->MakePayment(1,1,"complete");
 // $c=new Category();
@@ -37,7 +38,7 @@ $pay=new Payment();
 // require_once "../routes/web.php";
 
 
-$c=new Comment();
+// $c=new Comment();
 // $c->CreateComment(3,1,"new comment");
 // $c->UpdateComment("new content",1);
 // $c->DeleteComment(1);
@@ -46,8 +47,10 @@ $c=new Comment();
 
 
 
-
-
+// $s=new Slider() ;
+// $s->createSlider(2,"new slider","new",20);
+// $s->deleteSlider(2);
+// var_dump($s->getAllSlider());
 
 // $b=new Blogs();
 // $b->CreateBlog(2,1,"iphdas  on",'des');
@@ -83,4 +86,4 @@ $c=new Comment();
 
 
 
-// require_once "../routes/web.php";
+require_once "../routes/web.php";

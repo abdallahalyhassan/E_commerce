@@ -40,7 +40,7 @@ switch ($page) {
         require_once "../views/forget-password.php";
         break;
     case "index-2":
-        require_once "../views/index-2.php";
+        require_once "../views/index.php";
         break;
     case "login":
         require_once "../views/login.php";
@@ -61,8 +61,12 @@ switch ($page) {
         require_once "../views/tracking.php";
         break;
     case "wishlist":
-        require_once "../views/tracking.php";
+        require_once "../views/wishlist.php";
         break;
+    case "LogInController":
+        require_once "../controllers/LogInController.php";
+        break;
+
 
 
 

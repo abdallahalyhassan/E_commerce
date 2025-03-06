@@ -31,24 +31,24 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="#">
+                                    <form action="../routes/web.php?page=LogInController" method="post">
                                         <div class="single-acc-field">
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" placeholder="Enter your Email">
+                                            <input type="email" id="email" name="email" placeholder="Enter your Email">
                                         </div>
                                         <div class="single-acc-field">
                                             <label for="password">Password</label>
-                                            <input type="password" id="password" placeholder="Enter your password">
+                                            <input type="password" id="password" name="password" placeholder="Enter your password">
                                         </div>
                                         <div class="single-acc-field boxes">
                                             <input type="checkbox" id="checkbox">
-                                            <label for="checkbox">Remember me</label>
+                                            <label name="checkbox" for="checkbox">Remember me</label>
                                         </div>
                                         <div class="single-acc-field">
                                             <button type="submit">Login Account</button>
                                         </div>
-                                        <a href="forget-password.html">Forget Password?</a>
-                                        <a href="register.html">Not Account Yet?</a>
+                                        <a href="../routes/web.php?page=forget-password">Forget Password?</a>
+                                        <a href="../routes/web.php?page=register">Not Account Yet?</a>
                                     </form>
                                 </div>
                             </div>
