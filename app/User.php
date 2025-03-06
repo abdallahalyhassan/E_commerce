@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-// session_start();  
+//  session_start();  
 
 use PDO;
 use PDOException;
@@ -57,7 +57,7 @@ class User{
             $p=$this->db->prepare($sql);
             $p->execute([':email'=>$email]);
             $res = $p->fetch(PDO::FETCH_ASSOC);  
-            if ($res&password_verify($password,$res["password"])){
+            if ($res&&password_verify($password,$res["password"])){
                  $_SESSION['username']=$res['F_name'];
                  $_SESSION['role']=$res['role'];
                  $_SESSION['id']=$res['id'];

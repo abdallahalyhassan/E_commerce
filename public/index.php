@@ -11,6 +11,7 @@ use App\Payment;
 use App\Blogs;
 use App\Comment;
 use App\Slider;
+session_start();
 
 
 require_once "../vendor/autoload.php";

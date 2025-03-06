@@ -1,5 +1,5 @@
 
-<?php require_once("../inc/header.php");?>
+
 
     <!--slider area start-->
     <section class="slider_section d-flex align-items-center" data-bgimg="assets/img/slider/slider3.jpg">
