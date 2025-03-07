@@ -74,7 +74,7 @@
                                         <div class="single-acc-field">
                                             <button type="submit">Register now</button>
                                         </div>
-                                        <a href="login.html">Already account? Login</a>
+                                        <a href="../public/index.php?page=login">Already account? Login</a>
                                     </form>
                                 </div>
                             </div>
