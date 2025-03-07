@@ -1,5 +1,6 @@
 <?php
-
+ob_start(); // Start output buffering
+session_start();
 use App\Shiping;
 use Database\DatabaseManager;
 use Database\MigrationManager;
@@ -11,16 +12,10 @@ use App\Payment;
 use App\Blogs;
 use App\Comment;
 use App\Slider;
-session_start();
-
-
-require_once "../vendor/autoload.php";
-
-
+require_once "../inc/header.php";
+require_once "../routes/web.php";
 DatabaseManager::initialize();
 MigrationManager::runMigrations();
-
-
 
 
 // $u=new User();
@@ -86,5 +81,5 @@ MigrationManager::runMigrations();
 
 
 
+require_once "../inc/footer.php";
 
-require_once "../routes/web.php";

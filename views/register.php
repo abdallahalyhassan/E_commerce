@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="../routes/web.php?page=">home</a></li>
+                            <li><a href="../public/index.php?page=home">home</a></li>
                             <li>Register</li>
                         </ul>
                     </div>
@@ -30,18 +30,42 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="#">
+                                    <form action="../public/index.php?page=registerController" method="POST">
                                         <div class="single-acc-field">
+                                        <?php 
+                                if(isset($_SESSION['errors']['name'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['name']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['name']);
+                                ?>
                                             <label for="name">Name</label>
-                                            <input type="text" id="name" placeholder="Enter Your Name">
+                                            <input type="text" name="name"  placeholder="Enter Your Name">
                                         </div>
                                         <div class="single-acc-field">
+                                        <?php 
+                                if(isset($_SESSION['errors']['email'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['email']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['email']);
+                                ?>
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" placeholder="Enter your Email">
+                                            <input type="email"  name="email" placeholder="Enter your Email">
                                         </div>
                                         <div class="single-acc-field">
+                                        <?php 
+                                if(isset($_SESSION['errors']['password'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['password']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['password']);
+                                ?>
                                             <label for="password">Password</label>
-                                            <input type="password" id="password" placeholder="At least 6 Charecter">
+                                            <input type="password" name="password"  placeholder="At least 6 Charecter">
                                         </div>
                                         <div class="single-acc-field boxes">
                                             <input type="checkbox" id="checkbox">

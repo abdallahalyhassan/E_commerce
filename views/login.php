@@ -1,4 +1,9 @@
-<?php require_once "../healper/healper.php";
+<?php 
+// require_once "../healper/healper.php";
+// if(isset($_SESSION['errors'])){
+// var_dump($_SESSION['errors']);
+// exit;
+// }
  ?>
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area">
@@ -34,13 +39,36 @@
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="account-content">
-                            <?php errorMessage();?>   
-                                <form action="../controllers/LogInController.php" method="post">
+                                <?php 
+                                if(isset($_SESSION['errors']['general'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['general']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['general']);
+                                ?>
+                                <form action="../public/index.php?page=LogInController" method="post">
                                     <div class="single-acc-field">
+                                    <?php 
+                                if(isset($_SESSION['errors']['email'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['email']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['email']);
+                                ?>
                                         <label for="email">Email</label>
                                         <input type="email" id="email" name="email" placeholder="Enter your Email">
                                     </div>
                                     <div class="single-acc-field">
+                                    <?php 
+                                if(isset($_SESSION['errors']['password'])):
+                                ?>
+                                <div class="alert alert-danger"><?=$_SESSION['errors']['password']?></div>
+                                <?php 
+                                endif;
+                                unset($_SESSION['errors']['password']);
+                                ?>
                                         <label for="password">Password</label>
                                         <input type="password" id="password" name="password"
                                             placeholder="Enter your password">
@@ -52,8 +80,8 @@
                                     <div class="single-acc-field">
                                         <button type="submit">Login Account</button>
                                     </div>
-                                    <a href="../routes/web.php?page=forget-password">Forget Password?</a>
-                                    <a href="../routes/web.php?page=register">Not Account Yet?</a>
+                                    <a href="../public/index.php?page=forget-password">Forget Password?</a>
+                                    <a href="../public/index.php?page=register">Not Account Yet?</a>
                                 </form>
                             </div>
                         </div>

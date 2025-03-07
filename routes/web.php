@@ -1,9 +1,6 @@
 <?php
-
-
+require_once "../vendor/autoload.php";
 $page = isset($_GET['page']) ? $_GET['page'] : "home";
-
-require_once "../inc/header.php";
 
 switch ($page) {
     case "home":
@@ -67,23 +64,7 @@ switch ($page) {
         require_once "../controllers/LogInController.php";
         break;
 
-
-
-
+    case "registerController":
+        require_once "../controllers/registerController.php";
+        break;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    require_once "../inc/footer.php";

@@ -9,8 +9,7 @@ use Database\DatabaseManager;
 
 class User{
     public $db;
-    public string $f_name;
-    private string $l_name;
+    public string $name;
     private string $email;
     private string $role;
     private string $password;
@@ -23,9 +22,8 @@ class User{
         $this->db = DatabaseManager::getConnection();
     }
 
-    public function add_User($f_name,$l_name,$email,$password,$role='user'){
-        $this->f_name=$f_name;
-        $this->l_name=$l_name;
+    public function add_User($name,$email,$password,$role='user'){
+        $this->name = $name; 
         $this->email=$email;
         $this->password= password_hash($password, PASSWORD_DEFAULT);;
         $this->role=$role;
@@ -36,11 +34,10 @@ class User{
     private function save(){
 
         try{
-        $sql = "INSERT INTO `users`( `F_name`, `L_name`, `email`, `role`, `password`) VALUES (:fname,:lname,:email,:role,:password)";
+        $sql = "INSERT INTO `users`( `name`, `email`, `role`, `password`) VALUES (:name,:email,:role,:password)";
         $p = $this->db->prepare($sql);
         $p->execute([
-            ':fname'=>$this->f_name,
-            ':lname'=>$this->l_name,
+            ':name'=>$this->name,
             ':email'=>$this->email,
             ':role'=>$this->role,
             ':password'=>$this->password
