@@ -6,7 +6,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index-2.html">home</a></li>
+                            <li><a href="index-2.php">home</a></li>
                             <li>Cart</li>
                         </ul>
                     </div>
@@ -37,7 +37,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="product_thumb"><a href="#"><img src="assets/img/s-product/product.jpg" alt=""></a></td>
+                                    <td class="product_thumb"><a href="#"><img src="../public/assets/img/s-product/product.jpg" alt=""></a></td>
                                     <td class="product_name"><a href="#">Handbag fringilla</a></td>
                                     <td class="product-price">$65.00</td>
                                     <td class="product_quantity"><label>Quantity</label> <input min="1" max="100" value="1" type="number"></td>

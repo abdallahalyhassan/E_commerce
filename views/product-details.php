@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index-2.html">home</a></li>
+                            <li><a href="index-2.php">home</a></li>
                             <li>Product details</li>
                         </ul>
                     </div>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="price_box">
                                 <span class="current_price">$70.00</span>
-                                <span class="old_price">$80.00</span>
+                                <span class="old_price">$90.00</span>
                                 
                             </div>
                             <div class="product_desc">
