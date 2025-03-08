@@ -67,4 +67,12 @@ switch ($page) {
     case "registerController":
         require_once "../controllers/registerController.php";
         break;
+
+    case "resetPasswordController":
+        require_once "../controllers/resetPasswordController.php";
+        break;
+        //resetPasswordController
+        // case "dashboard":
+        //     require_once "../admin/index.php";
+        //     break;
 }

@@ -55,7 +55,7 @@ class User{
             $p->execute([':email'=>$email]);
             $res = $p->fetch(PDO::FETCH_ASSOC);  
             if ($res&&password_verify($password,$res["password"])){
-                 $_SESSION['username']=$res['F_name'];
+                 $_SESSION['username']=$res['name'];
                  $_SESSION['role']=$res['role'];
                  $_SESSION['id']=$res['id'];
                 return true;

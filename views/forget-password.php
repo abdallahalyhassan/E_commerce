@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="breadcrumb_content">
                         <ul>
-                            <li><a href="index-2.html">home</a></li>
+                            <li><a href="index-2.php">home</a></li>
                             <li>Forget password</li>
                         </ul>
                     </div>
@@ -31,15 +31,15 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                                 <div class="account-content">
-                                    <form action="#">
+                                    <form action="../public/index.php?page=resetPasswordController" method="POST">
                                         <div class="single-acc-field">
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" placeholder="Enter your Email">
+                                            <input type="email" id="email" name="email" placeholder="Enter your Email">
                                         </div>
                                         <div class="single-acc-field">
                                             <button type="submit">Reset Password</button>
                                         </div>
-                                        <a href="login.html">Login now</a>
+                                        <a href="login.php">Login now</a>
                                     </form>
                                 </div>
                             </div>
