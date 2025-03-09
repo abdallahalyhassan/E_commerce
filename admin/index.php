@@ -1,8 +1,11 @@
 <?php
 include "includes/nav.php";
 include "includes/sidebar.php";
+use App\Category;
+$category = new Category();
+$categories = $category->GetAllCategory();
 ?>
-  
+
   <!-- Content Wrapper -->
   <div class="content-wrapper">
     <section class="content-header">
@@ -98,6 +101,48 @@ include "includes/sidebar.php";
         </div>
       </div>
     </section>
+     <!-- Latest Categories Table -->
+     <div class="card">
+       
+                <div class="card-header">
+                    <h3 class="card-title">Categories</h3>
+                    <a href="add-product.php" class="btn btn-primary float-right">+ Add Category</a>
+                </div>
+                <div class="card-body">
+                <?php successMessage() ?>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Category Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach($categories as $category):
+                                $id = $category['id'];
+                            ?>
+                            <tr>
+                                <td><?= $category['id']?></td>
+                                <td><?= $category['name']?></td>
+                                <td>
+                                    <a href="edit_category.php?id=2" class="btn btn-warning btn-sm">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </a>
+                                    <a href="../public/index.php?page=deleteCategoryController&id=<?=$id?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">
+                                        <i class="fas fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php
+                            endforeach; 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+</div>
   </div>
 </div>
 <script src="plugins/jquery/jquery.min.js"></script>

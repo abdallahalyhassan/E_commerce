@@ -4,6 +4,8 @@ use Database\DatabaseManager;
 
 use PDO;
 class Product {
+
+    use FileManegerTrat;
     private $db;
     
     public function __construct() {

@@ -34,7 +34,13 @@
           <li class="nav-item">
             <a href="add-category.php" class="nav-link">
               <i class="nav-icon fas fa-box"></i>
-              <p></p>
+              <p>low stock products</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="add-category.php" class="nav-link">
+              <i class="nav-icon fas fa-box"></i>
+              <p>low stock products</p>
             </a>
           </li>
         </ul>

@@ -5,6 +5,7 @@ class Validator {
 
     // validate strings 
     public function validateString($field, $value, $min = 2, $max = 255) {
+        $value = htmlspecialchars($value);
         if (empty($value)) {
             $this->errors[$field] = "$field cannot be empty.";
         } elseif (strlen($value) < $min || strlen($value) > $max) {
@@ -14,6 +15,8 @@ class Validator {
 
     //  validate numbers 
     public function validateNumber($field, $value, $min = 0, $max = PHP_INT_MAX) {
+
+        $value = htmlspecialchars($value);
         if (!is_numeric($value)) {
             $this->errors[$field] = "$field must be a number.";
         } elseif ($value < $min || $value > $max) {
@@ -22,6 +25,8 @@ class Validator {
     }
 // validate emails
     public function validateEmail($field, $value) {
+        $value = htmlspecialchars($value);
+
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             $this->errors[$field] = "Invalid email format.";
         }
@@ -29,6 +34,7 @@ class Validator {
 
     // validate password
     public function validatePassword($field, $value, $min = 6) {
+        
         if (strlen($value) < $min) {
             $this->errors[$field] = "$field must be at least $min characters.";
         }
@@ -65,6 +71,7 @@ class Validator {
 
     // validate empty values
     public function validateRequired($field, $value) {
+        $value = htmlspecialchars($value);
         if (empty($value)) {
             $this->errors[$field] = "$field is required.";
         }

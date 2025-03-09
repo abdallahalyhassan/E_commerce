@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once "../healper/healper.php";
+require_once __DIR__ . '/../../vendor/autoload.php';
+use Database\DatabaseManager;
+use Database\MigrationManager;
+DatabaseManager::initialize();
+MigrationManager::runMigrations();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

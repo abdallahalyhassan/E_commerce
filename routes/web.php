@@ -71,8 +71,17 @@ switch ($page) {
     case "resetPasswordController":
         require_once "../controllers/resetPasswordController.php";
         break;
-        //resetPasswordController
-        // case "dashboard":
-        //     require_once "../admin/index.php";
-        //     break;
+    case "add-category":
+        require_once "../controllers/admin/addCategoryController.php";
+        break;
+    case "add-product":
+        require_once "../controllers/admin/addProductController.php";
+        break;
+
+        case "deleteCategoryController":
+            require_once "../controllers/admin/deleteCategoryController.php";
+            break;
+
+
+      
 }

@@ -6,7 +6,7 @@ trait FileManegerTrat
 {
     // ali.png
     // assets/images/ali.png
-    protected function uploadFile($file, $dir = "../public/assets/images/")
+    public function uploadFile($file, $dir = "../public/assets/images/")
     {
         $filePath = $dir . $file['name'];
 
